@@ -1,0 +1,36 @@
+#main{
+    width:1024px;
+    margin:0 auto;
+}
+/*设置每一个瀑布流块*/
+#main .pin{
+    width:220px;
+    height: auto;
+    padding: 15px 0px 0px 15px; /*上 右 下 左*/
+    float: left;
+    }
+/*设置每一个瀑布流块中的图像样式*/
+#main .pin .box{
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    background: #FFF;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 6px #ccc; 
+    border-radius: 5px; 
+}
+#main .pin .box:hover{
+    box-shadow: 0px 0px 6px #646262;   /*阴影有点深*/
+    cursor: pointer;
+}
+#main .pin .box img{
+    width: 200px;
+}
+#loading{
+    width: 1024px;
+    text-align: center;
+    position: absolute;
+    left: 165px;
+    display: none;
+}
+
