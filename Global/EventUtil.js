@@ -7,7 +7,23 @@ var EventUtil = {
 		} else {
 			element["on" + type] = handler;
 		};
-	}
+	},
+
+	getEvent: function(event){
+		return event ? event : window.event;
+	},
+
+	getTarget: function(event){
+		return event.target || event.srcElement;
+	}, 
+
+	preventDefault: function(event){
+		if (event.preventDefault) {
+			return event.preventDefault();
+		}else{
+			return event.returnValue = false;
+		}
+	},
 
 	removeHandler: function(element, type, handler) {
 		if (element.removeEventListener) {
@@ -16,6 +32,14 @@ var EventUtil = {
 			element.detachEvent("on" + type, handler);
 		} else {
 			element["on" + type] = null;
+		};
+	},
+
+	stopPropagation: function(event){
+		if (event.stopPropagation) {
+			return event.stopPropagation();
+		} else{
+			return cancelBubble = true;
 		};
 	}
 }
